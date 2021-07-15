@@ -1,0 +1,123 @@
+body {
+    background-color: #2D9CDB;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+main {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 2rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.title {
+  font-size: 1.2em;
+  color: White;
+  margin-bottom: 1rem;
+  text-align:center;
+}
+
+.vista-previa {
+    flex-grow: 1;
+    height: 80vh;
+    background-color: grey;
+}
+
+p {
+    margin: 0;
+  }
+
+.configuracion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  .list {
+    width: 400px;
+    background-color: White;
+    padding: 0.5rem;
+    height: 50vh;
+    overflow-y: scroll;
+  }
+  .file-item {
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.2rem;
+  }
+  
+  .file-checkbox {
+    margin-right: 1rem;
+  }
+  
+  .file-title {
+    font-weight: 600;
+  }
+
+  .file-name {
+    font-size: 0.8em;
+  }
+
+  .item-caratula {
+    border-left: 4px solid #FFE606;
+    padding-left: 0.5rem;
+  }
+
+ .text-input {
+   width: 100%;
+   border-radius: 2px;
+   border: none;
+   padding: 0.5rem;
+   box-sizing: border-box;
+ }
+
+ .config-form {
+   width: 100%;
+ }
+
+ .btn {
+  border-radius: 2px;
+  border: none;
+   padding: 0.5rem;
+   box-sizing: border-box;
+   margin: 1rem 0;
+   margin-left: 1rem;
+ }
+
+ .btn-primary {
+   background-color: #5CE52C;
+   color: white;
+ }
+
+ .btn-right {
+   float: right;
+ }
+
+ .checkboxes-container {
+   padding: 1rem;
+   color: white;
+ }
+
+ .description {
+   font-size: 0.8em;
+   color: White;
+   font-weight: 400;
+ }
+
+ .file-item:first-child  div{
+   border-left: 3px solid red;
+   padding-left: 1rem;
+ }
