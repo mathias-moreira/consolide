@@ -1,8 +1,8 @@
 {
-  "name": "my-new-app",
-  "productName": "my-new-app",
-  "version": "1.0.0",
-  "description": "My Electron application description",
+  "name": "consolide",
+  "productName": "consolide",
+  "version": "2.0.0",
+  "description": "Consolide - Your file merger",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -14,54 +14,6 @@
   "keywords": [],
   "author": "Mathias Moreira",
   "license": "MIT",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "my_new_app"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ],
-      "plugins": [
-        {
-          "name": "@electron-forge/plugin-webpack",
-          "config": {
-            "mainConfig": "./webpack.main.config.js",
-            "renderer": {
-              "config": "./webpack.renderer.config.js",
-              "entryPoints": [
-                {
-                  "html": "./src/index.html",
-                  "js": "./src/renderer.js",
-                  "name": "main_window",
-                  "preload": {
-                    "js": "./src/preload.js"
-                  }
-                }
-              ]
-            }
-          }
-        }
-      ]
-    }
-  },
   "devDependencies": {
     "@electron-forge/cli": "^6.4.2",
     "@electron-forge/maker-deb": "^6.4.2",
@@ -76,6 +28,8 @@
     "style-loader": "^2.0.0"
   },
   "dependencies": {
+    "@electron-forge/publisher-github": "^7.8.1",
+    "dotenv": "^16.5.0",
     "electron-squirrel-startup": "^1.0.0",
     "pdf-lib": "^1.16.0"
   }
