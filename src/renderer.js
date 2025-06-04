@@ -3,6 +3,40 @@ import './styles.css';
 
 const list = document.getElementById('list');
 
+const createListItem = (file) => {
+    const item = document.createElement('li');
+    item.className = 'file-item';
+    item.innerHTML = `
+
+        <input class="file-checkbox" type="checkbox"></input>
+        <div>
+            <p class="file-title" contentEditable="true">${file.name}</p>
+            <p class="file-name">${file.path}</p>
+        </div>
+
+    `;
+    return item;
+}
+
+const getListElements = (list) => {
+    const elements = list.getElementsByTagName('li');
+    return [...elements]
+}
+
+const getFilesFromList = (list) => {
+    return getListElements(list).map(element => ({
+        name: element.querySelector('.file-title').innerText,
+        path: element.querySelector('.file-name').innerText
+    }))
+}
+
+const populateList = (files) => {
+    const list = document.getElementById('list');
+    files.map(createListItem).forEach(element => {
+        list.appendChild(element)
+    });
+}
+
 document.getElementById('btn-generar').addEventListener('click', () => {
 
     const options = {
@@ -52,40 +86,4 @@ btnQuitar.addEventListener('click', () => {
         return !element.querySelector('.file-checkbox').checked
     }).forEach(element => list.appendChild(element))
 })
-
-
-const populateList = (files) => {
-    const list = document.getElementById('list');
-    files.map(createListItem).forEach(element => {
-        list.appendChild(element)
-    });
-}
-
-const createListItem = (file) => {
-    const item = document.createElement('li');
-    item.className = 'file-item';
-    item.innerHTML = `
-
-        <input class="file-checkbox" type="checkbox"></input>
-        <div>
-            <p class="file-title" contentEditable="true">${file.name}</p>
-            <p class="file-name">${file.path}</p>
-        </div>
-
-    `;
-    return item;
-}
-
-const getFilesFromList = (list) => {
-    return getListElements(list).map(element => ({
-        name: element.querySelector('.file-title').innerText,
-        path: element.querySelector('.file-name').innerText
-    }))
-    
-}
-
-const getListElements = (list) => {
-    const elements = list.getElementsByTagName('li');
-    return [...elements]
-}
 
